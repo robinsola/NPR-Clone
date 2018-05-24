@@ -1,7 +1,3 @@
-
-
-/*END MEDIA QUERIES--------------------------------------*/
-
 * {
   box-sizing: border-box;
 }
@@ -28,9 +24,6 @@ ul {
 
 /*header and nav flexing stuff*/
 
-.header {
-  display: flex;
-}
 
 li {
   margin-right: 30px;
@@ -46,6 +39,10 @@ a {
 
 a:hover {
   color: #a1bce2;
+}
+
+.header {
+  display: flex;
 }
 
 .main-nav ul {
@@ -72,26 +69,19 @@ a:hover {
   grid-gap: 10px;
   grid-template-rows: repeat(1fr);
   grid-template-areas:
-  "header header header header"
-  "article-main article-main article-main sidebar"
-  "article1 article2 article3 sidebar"
-  "mid-text mid-text mid-text sidebar"
-  "local-station local-station local-station sidebar"
-  "footer footer footer sidebar";
+  "header"
+  "article-main"
+  "article1"
+  "article2"
+  "article3"
+  "mid-text"
+  "local-station"
+  "footer";
 }
 
 .header {
   background-color: #ffffff;
   grid-area: header;
-}
-
-.sidebar {
-  grid-area: sidebar;
-}
-
-.sidebar img {
-  object-fit: contain;
-  width: 300px;
 }
 
 .article-main {
@@ -150,30 +140,30 @@ a:hover {
   font-weight: bold;
 }
 
-@media screen and (max-width: 700px)  {
+/*MEDIA QUERIES--------------------------------------*/
+
+@media screen and (min-width: 1021px)  {
   .wrapper {
-    /*display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;*/
     grid-template-areas:
-    "header"
-    "article-main"
-    "article1"
-    "article2"
-    "article3"
-    "mid-text"
-    "local-station"
-    "footer";
+    "header header header header"
+    "article-main article-main article-main sidebar"
+    "article1 article2 article3 sidebar"
+    "mid-text mid-text mid-text sidebar"
+    "local-station local-station local-station sidebar"
+    "footer footer footer sidebar";
   }
+
   .sidebar {
-    display: none;
+    grid-area: sidebar;
   }
-  .main-nav ul {
-    display: none;
+
+  .sidebar img {
+    object-fit: contain;
+    width: 300px;
   }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (min-width: 700px) and (max-width: 1020px) {
   .wrapper {
     grid-template-areas:
     "header header header"
